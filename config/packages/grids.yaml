@@ -11,3 +11,27 @@ sylius_grid:
                 email:
                     type: string
                     label: sylius.ui.email
+                state:
+                    type: string
+                    label: sylius.ui.state
+            actions:
+                 main:
+                     create:
+                         type: create
+                 item:
+                     update:
+                         type: update
+                     delete:
+                         type: delete
+                     trust:
+                         type: apply_transition
+                         label: app.ui.trust
+                         icon: star
+                         options:
+                             link:
+                                 route: app_admin_supplier_trust
+                                 parameters:
+                                     id: resource.id
+                             transition: trust
+                             graph: app_supplier
+                             class: yellow
