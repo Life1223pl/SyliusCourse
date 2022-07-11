@@ -62,7 +62,3 @@ services:
     App\Notifier\SupplierTrustingNotifierInterface:
         class: App\Notifier\EmailSupplierTrustingNotifier
         public: true
-    
-    App\Fixture\SupplierFixture:
-        arguments:
-            $supplierManager: \var\cache\dev\ContainerSepuAT3\getSyliusFixtures_FixtureRegistryService.php
