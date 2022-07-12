@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,6 +43,12 @@ class Supplier implements SupplierInterface
      * @ORM\Column(type="string")
      */
     private $state = self::STATE_NEW;
+
+    /** @var Collection
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\Product\Product", mappedBy="supplier")
+     */
+    private $products;
 
     /**
      * @return int|null
@@ -98,5 +105,19 @@ class Supplier implements SupplierInterface
     {
         $this->state = $state;
     }
+
+    /**
+     * @return Collection
+     */
+    public function getProducts(): Collection
+    {
+        return $this->products;
+    }
+
+    public function countProducts(): int
+    {
+        return $this->products->count();
+    }
+
 
 }
