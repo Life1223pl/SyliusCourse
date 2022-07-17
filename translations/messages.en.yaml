@@ -2,6 +2,6 @@ app:
     ui:
         suppliers: "Suppliers"
         trust: "Trust"    
-        supplier: "Supplier"   
-        
+        supplier: "Supplier"
+        t_shirt_product: "T-Shirt Product"
             

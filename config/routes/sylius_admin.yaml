@@ -28,3 +28,21 @@ app_admin_supplier_trust:
             redirect: referer
             flash: app.ui.supplier_trusted
                 
+app_admin_product_create_t_shirt:
+    path: /admin/products/new/t-shirt
+    methods: [GET, POST]
+    defaults:
+        _controller: sylius.controller.product:createAction
+        _sylius:
+            section: admin
+            permission: true
+            factory:
+                method: createTShirt
+            template: "@SyliusAdmin/Crud/create.html.twig"
+            redirect: sylius_admin_product_update
+            vars:
+                subheader: sylius.ui.manage_your_product_catalog
+                templates:
+                    form: "@SyliusAdmin/Product/_form.html.twig"
+                route:
+                    name: sylius_admin_product_create_simple    

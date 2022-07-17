@@ -13,7 +13,7 @@ class TrustedCustomerChecker implements TrustedCustomerCheckerInterface
             return false;
         }
 
-        if($customer->getGroup()->getCode() !== "TRUSTED"){
+        if($customer->getGroup()->getCode() !== 'TRUSTED'){
             return false;
         }
 
