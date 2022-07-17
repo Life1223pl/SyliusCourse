@@ -69,3 +69,8 @@ services:
             - '@App\Checker\TrustedCustomerCheckerInterface'
         tags:
             - { name: kernel.event_listener, event: sylius.product_review.pre_create, method: acceptForTrustedAuthor }
+    
+    App\Factory\ProductFactory:
+        decorates: sylius.factory.product
+        arguments:
+            - '@App\Factory\ProductFactory.inner'
