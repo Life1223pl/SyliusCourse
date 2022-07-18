@@ -74,3 +74,11 @@ services:
         decorates: sylius.factory.product
         arguments:
             - '@App\Factory\ProductFactory.inner'
+    
+    App\Assigner\ShipmentCodeAssignerInterface:
+        class: App\Assigner\ShipmentCodeAssigner
+        arguments:
+            - '@App\Provider\ShipmentCodeProviderInterface'
+            - '@Doctrine\ORM\EntityManagerInterface'
+        public: true 
+            
