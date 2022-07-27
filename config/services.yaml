@@ -110,3 +110,15 @@ services:
                   label: "app.ui.customer_birthday",
                   form_type: Symfony\Component\Form\Extension\Core\Type\FormType
               }
+
+    App\Promotion\Action\FreeOrderPromotionActionCommand:
+        arguments:
+            - '@sylius.factory.adjustment'
+        tags: 
+            -
+              {
+                  name: sylius.promotion_action,
+                  type: free_order,
+                  label: "app.ui.free_order",
+                  form_type: Symfony\Component\Form\Extension\Core\Type\FormType
+              }
