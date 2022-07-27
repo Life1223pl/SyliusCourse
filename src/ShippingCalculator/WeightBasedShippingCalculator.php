@@ -14,7 +14,7 @@ class WeightBasedShippingCalculator implements CalculatorInterface
         $totalWeight = 0.0;
 
         /** @var OrderItemInterface $iteam */
-        foreach ($subject->getOrder()->getIteams() as $iteam){
+        foreach ($subject->getOrder()->getItems() as $iteam){
             //wez wagę z każdego przedmiotu w zamówieniu i pomnóż przez ilość danego przedmiotu, dodaj wszystkie wagi do siebie.
             $totalWeight += $iteam->getVariant()->getWeight() * $iteam->getQuantity();
         }
