@@ -100,4 +100,13 @@ services:
             - 'Shop/quickCheckout.html.twig'
         tags:
             - { name: kernel.event_listener, event: sonata.block.event.sylius.shop.product.show.after_add_to_cart, method: onBlockEvent }
-            
+    
+    App\Promotion\Rule\BirthdayPromotionRuleChecker:
+        tags:
+            -
+              {
+                  name: sylius.promotion_rule_checker,
+                  type: birthday,
+                  label: "app.ui.customer_birthday",
+                  form_type: Symfony\Component\Form\Extension\Core\Type\FormType
+              }

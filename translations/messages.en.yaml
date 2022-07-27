@@ -1,7 +1,9 @@
 app:
     ui:
+        customer_birthday: "Customer Birthday"
         suppliers: "Suppliers"
         trust: "Trust"    
         supplier: "Supplier"
         t_shirt_product: "T-Shirt Product"
+            
             
