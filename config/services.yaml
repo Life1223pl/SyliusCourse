@@ -81,4 +81,23 @@ services:
             - '@App\Provider\ShipmentCodeProviderInterface'
             - '@Doctrine\ORM\EntityManagerInterface'
         public: true 
+    
+    App\Controller\QuickCheckoutAction:
+        arguments:
+            - '@sylius.repository.product_variant'
+            - '@sylius.factory.order'
+            - '@sylius.factory.order_item'
+            - '@sylius.order_item_quantity_modifier'
+            - '@sylius.context.shopper'
+            - '@sm.factory'
+            - '@Doctrine\ORM\EntityManagerInterface'
+            - '@router'
+        public: true
+            
+    app.block_event_listener.product.show.after_add_to_cart:
+        class: Sylius\Bundle\UiBundle\Block\BlockEventListener
+        arguments:
+            - 'Shop/quickCheckout.html.twig'
+        tags:
+            - { name: kernel.event_listener, event: sonata.block.event.sylius.shop.product.show.after_add_to_cart, method: onBlockEvent }
             
