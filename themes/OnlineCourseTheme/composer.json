@@ -1,0 +1,12 @@
+{
+    "name": "sylius/online-course-theme",
+    "authors": [{
+        "name": "Sylius Team",
+        "email": "contact@example.com"
+    }],
+    "extra": {
+        "sylius-theme": {
+            "title": "Online Course Theme"
+        }
+    }
+}

@@ -94,13 +94,6 @@ services:
             - '@router'
         public: true
             
-    app.block_event_listener.product.show.after_add_to_cart:
-        class: Sylius\Bundle\UiBundle\Block\BlockEventListener
-        arguments:
-            - 'Shop/quickCheckout.html.twig'
-        tags:
-            - { name: kernel.event_listener, event: sonata.block.event.sylius.shop.product.show.after_add_to_cart, method: onBlockEvent }
-    
     App\Promotion\Rule\BirthdayPromotionRuleChecker:
         tags:
             -
