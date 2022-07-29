@@ -239,3 +239,11 @@ sylius_theme:
             scan_depth: 1
             directories:
                 - "%kernel.project_dir%/themes"
+
+sylius_ui:
+    events:
+        sylius.shop.product.show.right_sidebar:
+            blocks:
+                quick_checkout:
+                    template: 'Shop/quickCheckout.html.twig'
+                    priority: 0
